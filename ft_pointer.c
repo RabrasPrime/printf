@@ -6,41 +6,33 @@
 /*   By: tjooris <tjooris@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 15:01:26 by tjooris           #+#    #+#             */
-/*   Updated: 2024/11/22 14:48:59 by tjooris          ###   ########.fr       */
+/*   Updated: 2024/11/26 15:03:50 by tjooris          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_pointer_len(void *p)
+#include <stdarg.h>
+
+int	ft_pointeur(char *str, int i, va_list arg)
 {
-    unsigned long ptr;
-    int           len;
+    int j;
+    int nb;
 
-    ptr = (unsigned long)p;
-    len = 2;
-    if (ptr == 0)
-        return (len + 1);
-    while (ptr >= 16)
+    if (str)
     {
-        len++;
-        ptr /= 16;
+        str[i + 1] = '0';
+        str[i + 2] = 'x';
     }
-    return (len);
-}
-
-int ft_pointer(char *str, void *p)
-{
-    int i;
-    unsigned long ptr;
-
-    ptr = (unsigned long)p;
-    i = ft_pointer_len(p) - 1;
-    while (i > 1)
+    nb = va_arg(arg, int);
+    i += 2;
+    j = 2;
+    while (nb > 16)
     {
-        str[i] = "0123456789abcdef"[ptr % 16];
-        ptr /= 16;
-        i--;
+        if (str)
+        {
+            str[i] = "0123456789abcdef"[nb % 16];
+            i++;
+        }
+        j++;
     }
-    str[1] = 'x';
-    str[0] = '0';
-    return (1);
+    return (j);
 }

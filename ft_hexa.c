@@ -6,47 +6,48 @@
 /*   By: tjooris <tjooris@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 15:03:30 by tjooris           #+#    #+#             */
-/*   Updated: 2024/11/22 14:58:19 by tjooris          ###   ########.fr       */
+/*   Updated: 2024/11/26 14:38:48 by tjooris          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int hexa_len(int nb)
-{
-    int count;
+#include <stdarg.h>
 
-    count = 1;
-    while (nb >= 16)
+int	ft_hexamin(char *str, int i, va_list arg)
+{
+    int j;
+    int nb;
+
+    j = 0;
+    nb = va_arg(arg, int);
+    while (nb > 16)
     {
-        count++;
+        if (str)
+        {
+            str[i] = "0123456789abcdef"[nb % 16];
+            i++;
+        }
+        j++;
         nb /= 16;
     }
-    return (count);
+    return (j);
 }
 
-int hexa_min(char *str, int nb)
+int	ft_hexamaj(char *str, int i, va_list arg)
 {
-    int i;
+    int j;
+    int nb;
 
-    i = hexa_len(nb);
-    while (i)
+    j = 0;
+    nb = va_arg(arg, int);
+    while (nb > 16)
     {
-        str[i] = "0123456789abcdef"[nb % 16];
+        if (str)
+        {
+            str[i] = "0123456789ABCDEF"[nb % 16];
+            i++;
+        }
+        j++;
         nb /= 16;
-        i--;
     }
-    return (1);
-}
-
-int hexa_maj(char *str, int nb)
-{
-    int i;
-
-    i = hexa_len(nb);
-    while (i)
-    {
-        str[i] = "0123456789ABCDEF"[nb % 16];
-        nb /= 16;
-        i--;
-    }
-    return (1);
+    return (j);
 }

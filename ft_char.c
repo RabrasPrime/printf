@@ -6,7 +6,15 @@
 /*   By: tjooris <tjooris@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 15:04:21 by tjooris           #+#    #+#             */
-/*   Updated: 2024/11/18 15:04:23 by tjooris          ###   ########.fr       */
+/*   Updated: 2024/11/26 13:50:27 by tjooris          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdarg.h>
+
+int	ft_char(char *str, int i, va_list arg)
+{
+    if (str)
+        str[i] = (char)va_arg(arg, int);
+    return (1);
+}

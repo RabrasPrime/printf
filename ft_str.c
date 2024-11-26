@@ -1,33 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_unsigned.c                                      :+:      :+:    :+:   */
+/*   ft_str.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tjooris <tjooris@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/18 15:03:37 by tjooris           #+#    #+#             */
-/*   Updated: 2024/11/26 15:26:49 by tjooris          ###   ########.fr       */
+/*   Created: 2024/11/26 12:54:17 by tjooris           #+#    #+#             */
+/*   Updated: 2024/11/26 13:50:22 by tjooris          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdarg.h>
 
-int	ft_unsigned(char *str, int i, va_list arg)
+int	ft_str(char *str, int i, va_list arg)
 {
-	unsigned int	nb;
-	int				j;	
-	
-	j = 0;
-	nb = va_arg(arg, unsigned int);
-	while (nb > 9)
-	{
-		if (str)
-		{
-			str[i] = (nb % 10) + '0';
-			i++;
-		}
-		j++;
-		nb /= 10;
-	}
-	return (j);
+    int     j;
+    char    *s;
+
+    s = va_arg(arg, char*);
+    j = 0;
+    while (s[j])
+    {
+        if (str)
+        {
+            str[i] = s[j];
+            i++;
+        }
+        j++;
+    }
+    return (j);
 }
