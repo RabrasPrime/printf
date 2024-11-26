@@ -6,13 +6,13 @@
 /*   By: tjooris <tjooris@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 15:02:40 by tjooris           #+#    #+#             */
-/*   Updated: 2024/11/26 16:14:07 by tjooris          ###   ########.fr       */
+/*   Updated: 2024/11/26 16:33:50 by tjooris          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdarg.h>
 
-int let_intmin(char *str, int i)
+static int let_intmin(char *str, int i)
 {
     if (str)
     {
