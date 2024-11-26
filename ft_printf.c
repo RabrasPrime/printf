@@ -6,7 +6,7 @@
 /*   By: tjooris <tjooris@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 13:59:40 by tjooris           #+#    #+#             */
-/*   Updated: 2024/11/22 12:27:20 by tjooris          ###   ########.fr       */
+/*   Updated: 2024/11/26 16:21:21 by tjooris          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,14 @@
 
 int ft_printf(const char *, ...)
 {
-    char * str;
+    char *str;
+    int   len;
     va_list arg;
-    va_list cpy;
-
+    
     va_start(arg, str);
-    va_copy(cpy, arg);
     
     va_end(arg);
+    va_start(arg, str);
     
+    va_end(arg);
 }
