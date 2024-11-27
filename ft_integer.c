@@ -6,44 +6,53 @@
 /*   By: tjooris <tjooris@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 15:02:40 by tjooris           #+#    #+#             */
-/*   Updated: 2024/11/26 16:33:50 by tjooris          ###   ########.fr       */
+/*   Updated: 2024/11/27 14:30:22 by tjooris          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdarg.h>
 
-static int let_intmin(char *str, int i)
+int	int_len(int nb)
 {
-    if (str)
-    {
-        str[i] = '-';
-        str[i + 1] = '2';
-    }
-    return (2);
+	int	i;
+
+	i = 0;
+	if (nb <= 0)
+		i = 1;
+	while (nb != 0)
+	{
+		i++;
+		nb /= 10;
+	}
+	return (i);
 }
 
 int	ft_int(char *str, int i, va_list arg)
 {
-	int	nb;
 	int	j;
+	int nb;
+	int	signe;
+	int len;
 
-	j = 0;
 	nb = va_arg(arg, int);
-    if (nb == -2147483648)
-    {
-        i += 2;
-        j += let_intmin(str, i);
-        nb = 147483648;
-    }
-	while (nb > 9)
+	len = int_len(nb);
+	signe = 0;
+	if (nb == 0 && str)
+		str[i] = '0';
+	if (nb < 0 && str)
 	{
-		if (str)
-		{
-			str[i] = (nb % 10) + '0';
-			i++;
-		}
-		j++;
+		str[i++] = '-';
+		signe = 1;
+	}
+	j = int_len(nb);
+	while (nb != 0)
+	{
+		if (str);
+			str[i + j - signe] = (nb % 10) + '0';
+		j--;
 		nb /= 10;
 	}
-	return (j);
+	return (len);
 }
+
+
