@@ -6,7 +6,7 @@
 /*   By: tjooris <tjooris@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 15:02:40 by tjooris           #+#    #+#             */
-/*   Updated: 2024/11/27 15:19:23 by tjooris          ###   ########.fr       */
+/*   Updated: 2024/11/27 16:45:00 by tjooris          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,9 +30,9 @@ static int	int_len(int nb)
 int	ft_int(char *str, int i, va_list arg)
 {
 	int	j;
-	int nb;
+	int	nb;
 	int	signe;
-	int len;
+	int	len;
 
 	nb = va_arg(arg, int);
 	len = int_len(nb);
@@ -47,12 +47,10 @@ int	ft_int(char *str, int i, va_list arg)
 	j = int_len(nb);
 	while (nb != 0)
 	{
-		if (str);
+		if (str)
 			str[i + j - signe] = (nb % 10) + '0';
 		j--;
 		nb /= 10;
 	}
 	return (len);
 }
-
-

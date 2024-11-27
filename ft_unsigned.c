@@ -6,13 +6,13 @@
 /*   By: tjooris <tjooris@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 15:03:37 by tjooris           #+#    #+#             */
-/*   Updated: 2024/11/27 14:30:41 by tjooris          ###   ########.fr       */
+/*   Updated: 2024/11/27 16:45:24 by tjooris          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdarg.h>
 
-static int u_len(unsigned int nb)
+static int	u_len(unsigned int nb)
 {
 	int	i;
 
@@ -30,7 +30,7 @@ int	ft_unsigned(char *str, int i, va_list arg)
 	unsigned int	nb;
 	int				len;
 	int				j;	
-	
+
 	nb = va_arg(arg, unsigned int);
 	len = u_len(nb);
 	j = u_len(nb);
