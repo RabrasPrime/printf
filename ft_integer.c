@@ -6,13 +6,13 @@
 /*   By: tjooris <tjooris@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 15:02:40 by tjooris           #+#    #+#             */
-/*   Updated: 2024/11/27 14:30:22 by tjooris          ###   ########.fr       */
+/*   Updated: 2024/11/27 15:19:23 by tjooris          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdarg.h>
 
-int	int_len(int nb)
+static int	int_len(int nb)
 {
 	int	i;
 
