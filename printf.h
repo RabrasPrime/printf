@@ -6,13 +6,15 @@
 /*   By: tjooris <tjooris@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 15:04:39 by tjooris           #+#    #+#             */
-/*   Updated: 2024/11/28 15:44:33 by tjooris          ###   ########.fr       */
+/*   Updated: 2024/11/28 16:53:52 by tjooris          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PRINTF_H
 # define PRINTF_H
 # include "stdarg.h"
+# include "stdlib.h"
+# include "unistd.h"
 
 typedef int (*t_f)(char *, int, va_list);
 
@@ -26,7 +28,6 @@ int	    ft_int(char *str, int i, va_list arg);
 int	    ft_hexamin(char *str, int i, va_list arg);
 int	    ft_hexamaj(char *str, int i, va_list arg);
 void	init_function_table(t_f *functions);
-int     count_len(va_list arg, char c);
 int     ft_printlen(va_list arg, char *str);
 int     ft_printstr(va_list arg, char *str, char *dest);
 #endif

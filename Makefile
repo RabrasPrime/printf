@@ -6,11 +6,11 @@
 #    By: tjooris <tjooris@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/18 15:04:51 by tjooris           #+#    #+#              #
-#    Updated: 2024/11/28 16:30:22 by tjooris          ###   ########.fr        #
+#    Updated: 2024/11/28 16:54:21 by tjooris          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRCS =	ft_printf.c ft_printflen.c ft_printfstr.c \
+SRCS =	ft_printf.c ft_printflen.c ft_printstr.c \
         ft_char.c ft_str.c ft_integer.c ft_hexa.c \
 		ft_pointer.c ft_unsigned.c ft_utils.c
 
