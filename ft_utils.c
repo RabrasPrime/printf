@@ -1,30 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   ft_utils.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tjooris <tjooris@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/18 13:59:40 by tjooris           #+#    #+#             */
-/*   Updated: 2024/11/28 10:04:11 by tjooris          ###   ########.fr       */
+/*   Created: 2024/11/28 10:03:37 by tjooris           #+#    #+#             */
+/*   Updated: 2024/11/28 10:13:57 by tjooris          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdarg.h>
-#include "printf.h"
-
-/*
-int ft_printf(const char *, ...)
+void	init_function_table(t_f *functions)
 {
-    char *str;
-    int   len;
-    va_list arg;
-    
-    va_start(arg, str);
-    
-    va_end(arg);
-    va_start(arg, str);
-    
-    va_end(arg);
+	functions[0] = ft_unsigned;
+	functions[1] = ft_str;
+	functions[2] = ft_char;
+	functions[3] = ft_pointeur;
+	functions[4] = ft_int;
+	functions[5] = ft_hexamin;
+	functions[6] = ft_hexamaj;
 }
-*/

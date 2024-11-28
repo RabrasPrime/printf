@@ -6,7 +6,7 @@
 /*   By: tjooris <tjooris@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/26 11:17:57 by tjooris           #+#    #+#             */
-/*   Updated: 2024/11/27 17:27:14 by tjooris          ###   ########.fr       */
+/*   Updated: 2024/11/28 10:24:33 by tjooris          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,5 +16,19 @@
 
 int ft_printlen(va_list arg, char *str)
 {
-    int (*f[7])(char *, int, va_list) = {ft_unsigned, ft_str, ft_char, ft_int, ft_pointeur, ft_hexamaj, ft_hexamin};
+    t_f     function[7];
+    int     count;
+    int     j;
+    int     i;
+
+    init_function_table(functions);
+    i = 0;
+    while (str[i])
+    {
+        if(str[i + 1] && str[i++] == '%')
+        {
+            j = 0;
+            while ()
+        }
+    }
 }
