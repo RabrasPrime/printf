@@ -6,7 +6,7 @@
 /*   By: tjooris <tjooris@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/28 13:17:15 by tjooris           #+#    #+#             */
-/*   Updated: 2024/11/28 14:57:14 by tjooris          ###   ########.fr       */
+/*   Updated: 2024/11/28 14:59:39 by tjooris          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,5 +46,6 @@ int ft_printstr(va_list arg, char *str, char *dest)
         }
         i++;
     }
+    dest[count] = '\0';
     return (count);
 }
