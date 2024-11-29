@@ -6,7 +6,7 @@
 #    By: tjooris <tjooris@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/18 15:04:51 by tjooris           #+#    #+#              #
-#    Updated: 2024/11/28 16:54:21 by tjooris          ###   ########.fr        #
+#    Updated: 2024/11/29 11:13:26 by tjooris          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ SRCS =	ft_printf.c ft_printflen.c ft_printstr.c \
 
 OBJ = $(SRCS:.c=.o)
 
-DEP = $(BONUS:.c=.d)
+DEP = $(SRCS:.c=.d)
 
 CC	=	cc
 RM	=	rm -f
@@ -31,6 +31,9 @@ $(NAME) :	$(OBJ)
 
 clean:
 	$(RM) $(OBJ) $(DEP)
+
+fclean: clean
+	$(RM) $(NAME) $(DEP)
 
 -include $(DEP)
 

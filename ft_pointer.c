@@ -6,7 +6,7 @@
 /*   By: tjooris <tjooris@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 15:01:26 by tjooris           #+#    #+#             */
-/*   Updated: 2024/11/28 15:29:41 by tjooris          ###   ########.fr       */
+/*   Updated: 2024/11/29 12:48:46 by tjooris          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,8 +35,14 @@ void add0x(char *str, int i)
 
 int add0(char *str, int i)
 {
-	str[i + 2] = '0';
-	return (3);
+	if (str){
+		str[i] = '(';
+		str[i + 1] = 'n';
+		str[i + 2] = 'i';
+		str[i + 3] = 'l';
+		str[i + 4] = ')';
+	}
+	return (5);
 }
 
 int	ft_pointeur(char *str, int i, va_list arg)
@@ -46,10 +52,10 @@ int	ft_pointeur(char *str, int i, va_list arg)
 	unsigned long	nb;
 
 	nb = va_arg(arg, unsigned long);
-	if (str)
-		add0x(str, i);
 	if (nb == 0)
 		return (add0(str, i));
+	if (str)
+		add0x(str, i);
 	len = hex_length(nb);
 	j = len - 1;
 	while (nb > 0)

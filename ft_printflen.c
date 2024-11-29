@@ -6,13 +6,13 @@
 /*   By: tjooris <tjooris@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/26 11:17:57 by tjooris           #+#    #+#             */
-/*   Updated: 2024/11/28 14:06:21 by tjooris          ###   ########.fr       */
+/*   Updated: 2024/11/29 13:06:40 by tjooris          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
 #include <stdarg.h>
-#include "printf.h"
+#include "ft_printf.h"
 
 static int count_len(va_list arg, char c)
 {
@@ -21,10 +21,12 @@ static int count_len(va_list arg, char c)
 
     init_function_table(function);
     j = 0;
-    while ("cspdiuxX"[j] != c)
+    while ("cspdiuxX%"[j] != c)
         j++;
     if (j < 8)
         return (function[j](0, 0, arg));
+    if (j == 9)
+        return (1);
     return (2);
 }
 

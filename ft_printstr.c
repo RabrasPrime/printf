@@ -6,11 +6,11 @@
 /*   By: tjooris <tjooris@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/28 13:17:15 by tjooris           #+#    #+#             */
-/*   Updated: 2024/11/28 14:59:39 by tjooris          ###   ########.fr       */
+/*   Updated: 2024/11/29 13:18:13 by tjooris          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "ft_printf.h"
 
 static int add_str(va_list arg, char c, int i, char *dest)
 {
@@ -19,10 +19,15 @@ static int add_str(va_list arg, char c, int i, char *dest)
 
     init_function_table(function);
     j = 0;
-    while ("cspdiuxX"[j] != c)
+    while ("cspdiuxX%"[j] != c)
         j++;
     if (j < 8)
         return (function[j](dest, i, arg));
+    if (j == 8)
+    {
+        dest[i] = '%';
+        return (1);
+    }
     dest[i] = '%';
     dest[i + 1] = c;
     return (2);

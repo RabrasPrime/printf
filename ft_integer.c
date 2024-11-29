@@ -6,7 +6,7 @@
 /*   By: tjooris <tjooris@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 15:02:40 by tjooris           #+#    #+#             */
-/*   Updated: 2024/11/28 16:49:46 by tjooris          ###   ########.fr       */
+/*   Updated: 2024/11/29 13:44:10 by tjooris          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,11 +44,11 @@ int	ft_int(char *str, int i, va_list arg)
 		str[i++] = '-';
 		signe = 1;
 	}
-	j = int_len(nb);
+	j = int_len(nb) - 1;
 	while (nb != 0)
 	{
 		if (str)
-			str[i + j - signe] = (nb % 10) + '0';
+			str[i + j + signe] = (nb % 10) + '0';
 		j--;
 		nb /= 10;
 	}

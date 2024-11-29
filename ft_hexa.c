@@ -6,7 +6,7 @@
 /*   By: tjooris <tjooris@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 15:03:30 by tjooris           #+#    #+#             */
-/*   Updated: 2024/11/27 17:08:38 by tjooris          ###   ########.fr       */
+/*   Updated: 2024/11/29 12:50:24 by tjooris          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ static	int	hex_length(unsigned int nb)
 	len = 0;
 	if (nb == 0)
 		len++;
-	while (nb > 0)
+	while (nb != 0)
 	{
 		nb /= 16;
 		len++;
@@ -30,12 +30,12 @@ static	int	hex_length(unsigned int nb)
 int	ft_hexamin(char *str, int i, va_list arg)
 {
 	int	j;
-	int	nb;
+	unsigned int	nb;
 	int	len;
 
 	nb = va_arg(arg, unsigned int);
 	len = hex_length(nb);
-	j = hex_length(nb);
+	j = len - 1;
 	if (nb == 0 && str)
 		str[i] = '0';
 	while (nb != 0)
@@ -51,12 +51,12 @@ int	ft_hexamin(char *str, int i, va_list arg)
 int	ft_hexamaj(char *str, int i, va_list arg)
 {
 	int	j;
-	int	nb;
+	unsigned int	nb;
 	int	len;
 
-	j = 0;
-	nb = va_arg(arg, int);
+	nb = va_arg(arg, unsigned int);
 	len = hex_length(nb);
+	j = len - 1;
 	if (nb == 0 && str)
 		str[i] = '0';
 	while (nb != 0)

@@ -6,12 +6,12 @@
 /*   By: tjooris <tjooris@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 13:59:40 by tjooris           #+#    #+#             */
-/*   Updated: 2024/11/28 16:53:16 by tjooris          ###   ########.fr       */
+/*   Updated: 2024/11/29 13:33:13 by tjooris          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdarg.h>
-#include "printf.h"
+#include "ft_printf.h"
 
 
 int ft_printf(const char *str, ...)
@@ -29,7 +29,7 @@ int ft_printf(const char *str, ...)
     va_start(arg, str);
     len = ft_printstr(arg, (char *)str, dest);
     va_end(arg);
-    write(1,dest,len);
+    len = write(1, dest, len);
     free(dest);
     return (len);
 }

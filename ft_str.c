@@ -6,11 +6,25 @@
 /*   By: tjooris <tjooris@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/26 12:54:17 by tjooris           #+#    #+#             */
-/*   Updated: 2024/11/27 16:58:35 by tjooris          ###   ########.fr       */
+/*   Updated: 2024/11/29 13:17:44 by tjooris          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdarg.h>
+
+int	strNull(char *str, int i)
+{
+	if (str)
+	{
+		str[i] = '(';
+		str[i + 1] = 'n';
+		str[i + 2] = 'u';
+		str[i + 3] = 'l';
+		str[i + 4] = 'l';
+		str[i + 5] = ')';
+	}
+	return (6);
+}
 
 int	ft_str(char *str, int i, va_list arg)
 {
@@ -18,6 +32,8 @@ int	ft_str(char *str, int i, va_list arg)
 	char	*s;
 
 	s = va_arg(arg, char *);
+	if (!s)
+		return (strNull(str, i));
 	j = 0;
 	while (s[j])
 	{
