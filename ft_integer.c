@@ -6,51 +6,59 @@
 /*   By: tjooris <tjooris@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 15:02:40 by tjooris           #+#    #+#             */
-/*   Updated: 2024/11/29 13:44:10 by tjooris          ###   ########.fr       */
+/*   Updated: 2024/12/02 11:33:26 by tjooris          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdarg.h>
 
-static int	int_len(int nb)
+static unsigned int	absolute_value(int nb)
 {
-	int	i;
-
-	i = 0;
-	if (nb <= 0)
-		i = 1;
-	while (nb != 0)
-	{
-		i++;
-		nb /= 10;
-	}
-	return (i);
+	if (nb < 0)
+		return (-nb);
+	return (nb);
 }
 
-int	ft_int(char *str, int i, va_list arg)
+static void	write_number(char *str, int index, unsigned int n)
 {
-	int	j;
-	int	nb;
-	int	signe;
+	while (n != 0)
+	{
+		str[index--] = (n % 10) + '0';
+		n /= 10;
+	}
+}
+
+static int	int_len(int nb)
+{
 	int	len;
 
-	nb = va_arg(arg, int);
-	len = int_len(nb);
-	signe = 0;
-	if (nb == 0 && str)
-		str[i] = '0';
-	if (nb < 0 && str)
-	{
-		str[i++] = '-';
-		signe = 1;
-	}
-	j = int_len(nb) - 1;
+	len = 0;
+	if (nb <= 0)
+		len = 1;
 	while (nb != 0)
 	{
-		if (str)
-			str[i + j + signe] = (nb % 10) + '0';
-		j--;
+		len++;
 		nb /= 10;
 	}
 	return (len);
 }
+
+int	ft_int(char *str, int i, va_list arg)
+{
+	int				nb;
+	int				len;
+	unsigned int	n;
+
+	nb = va_arg(arg, int);
+	len = int_len(nb);
+	n = absolute_value(nb);
+	if (nb < 0 && str)
+		str[i++] = '-';
+	if (nb == 0 && str)
+		str[i] = '0';
+	else if (str)
+		write_number(str, i + len - 1 - (nb < 0), n); // Ajustement pour les indices
+	return (len);
+}
+
+

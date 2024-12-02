@@ -6,17 +6,17 @@
 #    By: tjooris <tjooris@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/18 15:04:51 by tjooris           #+#    #+#              #
-#    Updated: 2024/11/29 11:13:26 by tjooris          ###   ########.fr        #
+#    Updated: 2024/12/02 11:58:59 by tjooris          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRCS =	ft_printf.c ft_printflen.c ft_printstr.c \
+SRC =	ft_printf.c ft_printflen.c ft_printstr.c \
         ft_char.c ft_str.c ft_integer.c ft_hexa.c \
 		ft_pointer.c ft_unsigned.c ft_utils.c
 
-OBJ = $(SRCS:.c=.o)
+OBJ = $(SRC:.c=.o)
 
-DEP = $(SRCS:.c=.d)
+DEP = $(SRC:.c=.d)
 
 CC	=	cc
 RM	=	rm -f

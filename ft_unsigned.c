@@ -6,7 +6,7 @@
 /*   By: tjooris <tjooris@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 15:03:37 by tjooris           #+#    #+#             */
-/*   Updated: 2024/11/27 16:45:24 by tjooris          ###   ########.fr       */
+/*   Updated: 2024/12/02 15:37:16 by tjooris          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,13 @@ int	ft_unsigned(char *str, int i, va_list arg)
 
 	nb = va_arg(arg, unsigned int);
 	len = u_len(nb);
-	j = u_len(nb);
+	j = len - 1;
+	if (nb == 0)
+    {
+        if (str)
+            str[i] = '0';
+        return (1);
+    }
 	while (nb != 0)
 	{
 		if (str)
