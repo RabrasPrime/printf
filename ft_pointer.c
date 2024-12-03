@@ -6,7 +6,7 @@
 /*   By: tjooris <tjooris@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 15:01:26 by tjooris           #+#    #+#             */
-/*   Updated: 2024/11/29 12:48:46 by tjooris          ###   ########.fr       */
+/*   Updated: 2024/12/03 14:09:12 by tjooris          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,15 +27,16 @@ static int	hex_length(unsigned long nb)
 	return (len);
 }
 
-void add0x(char *str, int i)
+void	add0x(char *str, int i)
 {
 	str[i] = '0';
 	str[i + 1] = 'x';
 }
 
-int add0(char *str, int i)
+int	add0(char *str, int i)
 {
-	if (str){
+	if (str)
+	{
 		str[i] = '(';
 		str[i + 1] = 'n';
 		str[i + 2] = 'i';

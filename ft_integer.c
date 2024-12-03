@@ -6,7 +6,7 @@
 /*   By: tjooris <tjooris@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 15:02:40 by tjooris           #+#    #+#             */
-/*   Updated: 2024/12/02 11:33:26 by tjooris          ###   ########.fr       */
+/*   Updated: 2024/12/03 14:03:57 by tjooris          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,8 +57,6 @@ int	ft_int(char *str, int i, va_list arg)
 	if (nb == 0 && str)
 		str[i] = '0';
 	else if (str)
-		write_number(str, i + len - 1 - (nb < 0), n); // Ajustement pour les indices
+		write_number(str, i + len - 1 - (nb < 0), n);
 	return (len);
 }
-
-

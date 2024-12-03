@@ -6,7 +6,7 @@
 /*   By: tjooris <tjooris@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 15:03:30 by tjooris           #+#    #+#             */
-/*   Updated: 2024/11/29 12:50:24 by tjooris          ###   ########.fr       */
+/*   Updated: 2024/12/03 14:02:04 by tjooris          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,9 +29,9 @@ static	int	hex_length(unsigned int nb)
 
 int	ft_hexamin(char *str, int i, va_list arg)
 {
-	int	j;
+	int				j;
 	unsigned int	nb;
-	int	len;
+	int				len;
 
 	nb = va_arg(arg, unsigned int);
 	len = hex_length(nb);
@@ -50,9 +50,9 @@ int	ft_hexamin(char *str, int i, va_list arg)
 
 int	ft_hexamaj(char *str, int i, va_list arg)
 {
-	int	j;
+	int				j;
 	unsigned int	nb;
-	int	len;
+	int				len;
 
 	nb = va_arg(arg, unsigned int);
 	len = hex_length(nb);

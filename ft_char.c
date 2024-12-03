@@ -6,7 +6,7 @@
 /*   By: tjooris <tjooris@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 15:04:21 by tjooris           #+#    #+#             */
-/*   Updated: 2024/11/28 16:49:26 by tjooris          ###   ########.fr       */
+/*   Updated: 2024/12/03 14:00:21 by tjooris          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,10 @@
 
 int	ft_char(char *str, int i, va_list arg)
 {
+	char	c;
+
+	c = (char)va_arg(arg, int);
 	if (str)
-		str[i] = (char)va_arg(arg, int);
+		str[i] = c;
 	return (1);
 }

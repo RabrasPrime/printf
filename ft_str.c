@@ -6,13 +6,13 @@
 /*   By: tjooris <tjooris@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/26 12:54:17 by tjooris           #+#    #+#             */
-/*   Updated: 2024/11/29 13:17:44 by tjooris          ###   ########.fr       */
+/*   Updated: 2024/12/03 13:59:16 by tjooris          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdarg.h>
 
-int	strNull(char *str, int i)
+int	str_null(char *str, int i)
 {
 	if (str)
 	{
@@ -33,7 +33,7 @@ int	ft_str(char *str, int i, va_list arg)
 
 	s = va_arg(arg, char *);
 	if (!s)
-		return (strNull(str, i));
+		return (str_null(str, i));
 	j = 0;
 	while (s[j])
 	{

@@ -6,7 +6,7 @@
 /*   By: tjooris <tjooris@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/28 10:03:37 by tjooris           #+#    #+#             */
-/*   Updated: 2024/11/29 11:07:22 by tjooris          ###   ########.fr       */
+/*   Updated: 2024/12/03 14:14:04 by tjooris          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,5 +23,3 @@ void	init_function_table(t_f *functions)
 	functions[6] = ft_hexamin;
 	functions[7] = ft_hexamaj;
 }
-
-
