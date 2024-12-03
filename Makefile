@@ -6,7 +6,7 @@
 #    By: tjooris <tjooris@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/18 15:04:51 by tjooris           #+#    #+#              #
-#    Updated: 2024/12/02 11:58:59 by tjooris          ###   ########.fr        #
+#    Updated: 2024/12/02 15:42:30 by tjooris          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,6 +34,8 @@ clean:
 
 fclean: clean
 	$(RM) $(NAME) $(DEP)
+
+
 
 -include $(DEP)
 
