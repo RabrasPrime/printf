@@ -6,7 +6,7 @@
 /*   By: tjooris <tjooris@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 13:59:40 by tjooris           #+#    #+#             */
-/*   Updated: 2024/12/03 14:16:39 by tjooris          ###   ########.fr       */
+/*   Updated: 2024/12/16 13:26:56 by tjooris          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ int	ft_printf(const char *str, ...)
 	int		len;
 	va_list	arg;
 
+	if (!str)
+		return (-1);
 	va_start(arg, str);
 	len = ft_printlen(arg, (char *)str);
 	va_end(arg);
