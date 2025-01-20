@@ -6,7 +6,7 @@
 /*   By: tjooris <tjooris@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/26 11:17:57 by tjooris           #+#    #+#             */
-/*   Updated: 2024/12/19 19:32:59 by tjooris          ###   ########.fr       */
+/*   Updated: 2025/01/20 13:39:46 by tjooris          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 static	int	count_len(va_list arg, char c)
 {
-	const t_f	function[8];
+	t_f	function[8];
 	int	j;
 
 	init_function_table(function);
